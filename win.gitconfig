@@ -1,0 +1,40 @@
+[core]
+	autocrlf = true
+	ignoreCase = false
+	editor = 'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+[alias]
+	indiff = diff --staged
+	list = log --oneline --graph --decorate --date-order -20
+	ff = merge --ff-only
+	branches = branch --list
+	files = ls-files
+	check = log --oneline --cherry-pick --right-only
+	goto = checkout
+	solve = mergetool
+	fixup = commit --fixup
+	squash = commit --squash
+	amend = commit --amend
+	pickthem = !git checkout --theirs $@ && git add $@
+	pickus = !git checkout --ours $@ && git add $@
+	cherry = cherry-pick
+	releases = ! git tag | grep -E '^v[[:digit:]]++(\\.[[:digit:]]++(\\.[[:digit:]]++)?)?(-[[:alnum:]\\-_]++)?' | sort -V -r
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = "C:/Program Files/KDiff3/kdiff3.exe"
+	trustExitCode = false
+[diff]
+	guitool = kdiff3
+[difftool "kdiff3"]
+	path = "C:/Program Files/KDiff3/kdiff3.exe"
+	trustExitCode = false
+[mergetool]
+	keepBackup = false
+[winUpdater]
+	recentlySeenVersion = 2.24.0.windows.2
+[credential]
+	helper = manager
+[pull]
+	rebase = merges
+[rebase]
+	autosquash = true
