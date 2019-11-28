@@ -1,7 +1,7 @@
 [core]
 	autocrlf = true
 	ignoreCase = false
-	editor = 'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+	editor = vim +start
 [alias]
 	indiff = diff --staged
 	list = log --oneline --graph --decorate --date-order -20
