@@ -17,7 +17,7 @@
 	pickthem = !git checkout --theirs $@ && git add $@
 	pickus = !git checkout --ours $@ && git add $@
 	cherry = cherry-pick
-	releases = ! git tag | grep -E '^v[[:digit:]]++(\\.[[:digit:]]++(\\.[[:digit:]]++)?)?(-[[:alnum:]\\-_]++)?' | sort -V -r
+	releases = ! git tag | grep -E '^v[[:digit:]]++(\.[[:digit:]]++(\.[[:digit:]]++)?)?(-[[:alnum:]\-_]++)?' | sed '/-/!{s/$/_/}' | sort -V -r | sed 's/_$//'
 [merge]
 	tool = kdiff3
 [mergetool "kdiff3"]
