@@ -9,7 +9,6 @@
 	branches = branch --list
 	files = ls-files
 	check = log --oneline --cherry-pick --right-only
-	goto = checkout
 	solve = mergetool
 	fixup = commit --fixup
 	squash = commit --squash
